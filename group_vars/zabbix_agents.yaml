@@ -1,0 +1,7 @@
+---
+zbx_agent_server: zabbix_server.domain.local
+zbx_agent_serveractive: zabbix_server_active.domain.local
+zbx_agent_hostname: zabbix_agent_hostname.domain.local
+zbx_agent_timeout: 7
+zbx_agent_dont_detect_ip: true
+zbx_agent_chassis: false

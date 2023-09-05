@@ -4,10 +4,6 @@
  
 
   tasks: 
-    - name: Install collection community.zabbix
-      community.general.ansible_galaxy_install:
-        type: collection
-        name: community.zabbix
 
     - include_role:
         name: community.zabbix.zabbix_agent

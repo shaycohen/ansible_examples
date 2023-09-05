@@ -1,6 +1,6 @@
 ---
 - name: Example playbook for POC
-  hosts: zabbix_agents
+  hosts: all
   collections:
     - community.zabbix
 

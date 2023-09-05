@@ -1,8 +1,7 @@
 ---
 - name: Example playbook for POC
   hosts: all
-  collections:
-    - community.zabbix
+ 
 
   tasks: 
     - include_role:

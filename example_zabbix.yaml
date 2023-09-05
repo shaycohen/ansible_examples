@@ -12,8 +12,8 @@
         zabbix_agent_serveractive: "{{ zbx_agent_serveractive }}"
         zabbix_agent_hostname: "{{ zbx_agent_hostname }}" 
         zabbix_agent_timeout: "{{ zbx_agent_timeout }}"
-        zabbix_agent_dont_detect_ip: "{{ zbx_agent_dont_detect_ip }}"
-        zabbix_agent_chassis: "{{ zbx_agent_chassis }}"
+        zabbix_agent_dont_detect_ip: True
+        zabbix_agent_chassis: True
         zabbix_agent_userparameters:
           - name: mysql
             scripts_dir: mysql

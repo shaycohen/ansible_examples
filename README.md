@@ -1,5 +1,5 @@
 This is a sample playbook for Ansible POC  
-It uses the community.zabbix collection to setup a pseudo Zabbix Agent and install some auxilary packages
+It uses the ansible.vmware_rest collection to setup a VM's
 
 # Quickstart  
 `ansible-playbook example_zabbix.yaml -i inventory.yaml`

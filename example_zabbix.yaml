@@ -1,30 +1,23 @@
 ---
-- name: Example playbook for POC
+- name: Example playbook for POC-leumi
   hosts: all
  
 
   tasks: 
 
-    - include_role:
-        name: community.zabbix.zabbix_agent
-      vars:
-        zabbix_agent_server: "{{ zbx_agent_server }}"
-        zabbix_agent_serveractive: "{{ zbx_agent_serveractive }}"
-        zabbix_agent_hostname: "{{ zbx_agent_hostname }}" 
-        zabbix_agent_timeout: "{{ zbx_agent_timeout }}"
-        zabbix_agent_dont_detect_ip: True
-        zabbix_agent_chassis: True
-        zabbix_agent_userparameters:
-          - name: mysql
-            scripts_dir: mysql
-          - name: galera
-          
-    - name: Ping my hosts
-      ansible.builtin.ping:
-
-    - name: Install latest bind-utils
-      ansible.builtin.package:
-        name: bind-utils
-        state: latest
+    - name: Create a VM
+      vmware.vmware_rest.vcenter_vm:
+        placement:
+          cluster: "{{ lookup('vmware.vmware_rest.cluster_moid', '/my_dc/host/my_cluster') }}"
+          datastore: "{{ lookup('vmware.vmware_rest.datastore_moid', '/my_dc/datastore/rw_datastore') }}"
+          folder: "{{ lookup('vmware.vmware_rest.folder_moid', '/my_dc/vm') }}"
+          resource_pool: "{{ lookup('vmware.vmware_rest.resource_pool_moid', '/my_dc/host/my_cluster/Resources') }}"
+        name: test_vm1
+        guest_OS: RHEL_7_64
+        hardware_version: VMX_11
+        memory:
+          hot_add_enabled: true
+          size_MiB: 1024
+      register: my_vm
 
 

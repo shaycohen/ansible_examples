@@ -1,5 +1,3 @@
 ---
 collections:
-  - community.zabbix
-  - ansible.posix
-  - community.general
+  - vmware.vmware_rest

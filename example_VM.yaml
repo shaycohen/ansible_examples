@@ -4,17 +4,7 @@
  
 
   tasks: 
-
-    - include_role:
-        name: vmware.vmware_rest.vcenter_vm
-      vars:
-        vcenter_vm_hostname: "{{ vcenter_hostname }}"
-        vcenter_vm_username: "{{ vcenter_username }}"
-        vcenter_vm_password: "{{ vcenter_password }}" 
-        vcenter_vm_name: "{{ vm_name }}"
-        vcenter_vm_validate_certs: "{{ vcenter_validate_certs }}"
-      
-    
+   
     - name: Create a VM
       vmware.vmware_rest.vcenter_vm:        
       

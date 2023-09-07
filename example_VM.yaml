@@ -10,7 +10,7 @@
     register: vc_datacenters
 
   - name: Display vc_datacenters
-  ansible.builtin.debug:
+    ansible.builtin.debug:
     var: vc_datacenters
     verbosity: 4
 

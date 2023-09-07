@@ -4,14 +4,15 @@
  
 
   tasks: 
-  - name: Collect information about a specific VM
+  - name: Look up the VM called bastion in the inventory
+    register: search_result
     vmware.vmware_rest.vcenter_vm_info:
-      vm: bastion
-    register: vc_vm_info
+      filter_names:
+      - bastion
 
-  - name: Display vc_vm_info
+  - name: Display search_result
     ansible.builtin.debug:
-      var: vc_vm_info
+      var: search_result
       verbosity: 0
 
   - name: Build a list of all the folders

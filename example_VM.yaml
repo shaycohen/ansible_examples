@@ -1,6 +1,6 @@
 ---
 - name: Example playbook for POC-leumi
-  hosts: all
+  hosts: localhost
  
 
   tasks: 

@@ -1,4 +1,4 @@
-zabbix_agents:
+vcenter_vm:
   hosts:
     bastion:
       ansible_host: bastion.htqp8.dynamic.opentlc.com

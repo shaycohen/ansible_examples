@@ -1,5 +1,5 @@
 zabbix_agents:
   hosts:
-    node1:
-      ansible_host: 3.128.206.73
+    bastion:
+      ansible_host: bastion.htqp8.dynamic.opentlc.com
 

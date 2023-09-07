@@ -1,0 +1,8 @@
+---
+vcenter_vm_hostname: bastion.htqp8.dynamic.opentlc.com
+vcenter_vm_datacenter: SDDC-Datacenter
+vcenter_vm_validate_certs: false
+vcenter_vm_username: sandbox-htqp8@vc.opentlc.com
+vcenter_vm_password: eyNi9DQS4x-9 
+vcenter_vm_name: bastion
+

@@ -4,6 +4,16 @@
  
 
   tasks: 
+  - name: Collect information about a specific VM
+    vmware.vmware_rest.vcenter_vm_info:
+      vm: bastion
+    register: vc_vm_info
+
+  - name: Display vc_vm_info
+    ansible.builtin.debug:
+      var: vc_vm_info
+      verbosity: 0
+
   - name: Build a list of all the folders
     vmware.vmware_rest.vcenter_folder_info:
       filter_type: VIRTUAL_MACHINE

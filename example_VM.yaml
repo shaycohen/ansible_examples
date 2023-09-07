@@ -11,7 +11,7 @@
   - name: Display vc_folders
     ansible.builtin.debug:
       var: vc_folders
-      verbosity: 4
+      verbosity: 0
 
   - name: collect a list of the datacenters
     vmware.vmware_rest.vcenter_datacenter_info:
@@ -21,7 +21,7 @@
   - name: Display vc_datacenters
     ansible.builtin.debug:
       var: vc_datacenters
-      verbosity: 4
+      verbosity: 0
 
   - name: Create a sample VM
     vmware.vmware_rest.vcenter_vm:

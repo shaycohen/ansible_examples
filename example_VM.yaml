@@ -7,9 +7,9 @@
    
   - name: collect a list of the datacenters
     vmware.vmware_rest.vcenter_datacenter_info:
-      vcenter_hostname: '{{ VCENTER_HOST }}'
-      vcenter_username: '{{ VCENTER_USER }}'
-      vcenter_password: '{{ VCENTER_PASSWORD }}'
+      vcenter_hostname: '{{ VMWARE_HOST }}'
+      vcenter_username: '{{ VMWARE_USER }}'
+      vcenter_password: '{{ VMWARE_PASSWORD }}'
     register: my_datacenters
 
 

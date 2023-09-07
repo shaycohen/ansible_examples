@@ -7,6 +7,12 @@
   - name: collect a list of the datacenters
     vmware.vmware_rest.vcenter_datacenter_info:
       vcenter_validate_certs: false
+    register: vc_datacenters
+
+  - name: Display vc_datacenters
+  ansible.builtin.debug:
+    var: vc_datacenters
+    verbosity: 4
 
   - name: Create a sample VM
     vmware.vmware_rest.vcenter_vm:

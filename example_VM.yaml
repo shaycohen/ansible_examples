@@ -7,9 +7,9 @@
 
     - name: Create a VM
       vmware.vmware_rest.vcenter_vm:        
-          hostname: "{{ hostvars[inventory_hostname]['ansible_host'] }}"
-          username: "{{ lookup('credstash', 'VCenter_leumi_username', 'namespace=awx') }}"
-          password: "{{ lookup('credstash', 'VCenter_leumi_password', 'namespace=awx') }}"
+          hostname: "{{ Leumi Inventory_hostname }}"
+          username: "{{ ansible_credstash_VCenter_leumi.vcenter_username }}"
+          password: "{{ ansible_credstash_VCenter_leumi.vcenter_password }}"
 
           placement:
             cluster: "{{ lookup('vmware.vmware_rest.cluster_moid', '/my_dc/host/my_cluster') }}"

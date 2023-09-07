@@ -7,7 +7,7 @@
 
     - name: Create a VM
       vmware.vmware_rest.vcenter_vm:        
-          hostname: "{{ Leumi Inventory_hostname }}"
+          hostname: "{{ inventory_hostname }}"
           username: "{{ ansible_credstash_VCenter_leumi.vcenter_username }}"
           password: "{{ ansible_credstash_VCenter_leumi.vcenter_password }}"
 

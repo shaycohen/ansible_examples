@@ -1,6 +1,6 @@
 ---
 - name: Example playbook for POC
-  hosts: node1
+  hosts: all
  
 
   tasks: 

@@ -4,6 +4,10 @@
  
 
   tasks: 
+  - name: collect a list of the datacenters
+    vmware.vmware_rest.vcenter_datacenter_info:
+      vcenter_validate_certs: false
+
   - name: Create a sample VM
     vmware.vmware_rest.vcenter_vm:
       vcenter_validate_certs: false
@@ -20,9 +24,5 @@
         size_MiB: 1024
     register: my_vm
 
-  - name: collect a list of the datacenters
-    vmware.vmware_rest.vcenter_datacenter_info:
-      vcenter_validate_certs: false
-    register: my_datacenters
 
 

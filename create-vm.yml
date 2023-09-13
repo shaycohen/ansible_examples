@@ -11,5 +11,5 @@
         datacenter: SDDC-Datacenter
         name: Leumi_VM
         state: present
-        cluster: tertre
+        cluster: Cluster-1
       delegate_to: localhost

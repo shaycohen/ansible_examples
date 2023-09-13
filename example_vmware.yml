@@ -4,7 +4,7 @@
 
   tasks: 
     - name: List of all folders
-      vmware.vmware_rest.vcenter_datastore_info:
+      vmware.vmware_rest.vcenter_folder_info:
       register: my_folders
     - debug:
        var: my_folders

@@ -1,30 +1,10 @@
 ---
 - name: Example playbook for POC
   hosts: all
- 
 
   tasks: 
-
-    - include_role:
-        name: community.zabbix.zabbix_agent
-      vars:
-        zabbix_agent_server: "{{ zbx_agent_server }}"
-        zabbix_agent_serveractive: "{{ zbx_agent_serveractive }}"
-        zabbix_agent_hostname: "{{ zbx_agent_hostname }}" 
-        zabbix_agent_timeout: "{{ zbx_agent_timeout }}"
-        zabbix_agent_dont_detect_ip: True
-        zabbix_agent_chassis: True
-        zabbix_agent_userparameters:
-          - name: mysql
-            scripts_dir: mysql
-          - name: galera
-          
-    - name: Ping my hosts
-      ansible.builtin.ping:
-
-    - name: Install latest bind-utils
-      ansible.builtin.package:
-        name: bind-utils
-        state: latest
-
-
+    - name: List of all folders
+      vmware.vmware_rest.vcenter_folder_info:
+      register: my_folders
+    - debug:
+       var: my_folders

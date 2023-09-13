@@ -6,10 +6,10 @@
     - name: Deploy Virtual Machine from template in content library
       community.vmware.vmware_guest:
         template: rhel_test_template
-        datastore: Shared_NFS_Volume
+        datastore: WorkloadDatastore
         folder: vm
-        datacenter: Sample_DC_1
-        name: Sample_VM
+        datacenter: SDDC-Datacenter
+        name: Leumi_VM
         state: present
         cluster: tertre
       delegate_to: localhost

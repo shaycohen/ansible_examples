@@ -5,7 +5,7 @@
   tasks:  
     - name: Deploy Virtual Machine from template in content library
       community.vmware.vmware_guest:
-        template: rhel_test_template
+        template: "/SDDC-Datacenter/vm/Templates/rhel86-tpl"
         datastore: WorkloadDatastore
         folder: vm
         datacenter: SDDC-Datacenter

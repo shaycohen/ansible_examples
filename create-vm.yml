@@ -1,10 +1,10 @@
 - name: Deploy Virtual Machine from template in content library
-  community.vmware.vmware_content_deploy_template:
+  community.vmware.vmware_guest:
     template: rhel_test_template
     datastore: Shared_NFS_Volume
     folder: vm
     datacenter: Sample_DC_1
     name: Sample_VM
-    resource_pool: test_rp
     state: present
+    cluster: tertre
   delegate_to: localhost

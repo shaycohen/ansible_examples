@@ -1,5 +1,9 @@
 ---
 collections:
-  - community.zabbix
-  - ansible.posix
-  - community.general
+  - name: zabbix.zabbix
+    version: ">=1.1.0"
+    source: https://hub-student.dhdvf.example.opentlc.com/ui/repo/published
+  - name: ansible.posix
+    version: ">=1.5.4"
+    source: https://hub-student.dhdvf.example.opentlc.com/ui/repo/published
+

@@ -4,6 +4,12 @@
  
 
   tasks: 
+    - name: Validate zabbix_agent_supported_os
+      assert:
+        that: zabbix_agent_supported_os | bool
+        fail_msg: "Zabbix agent is not supported on this OS"
+      ignore_errors: true
+
     - name: Include zabbix_agent role
       import_role:
         name: zabbix.zabbix.zabbix_agent

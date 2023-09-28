@@ -1,7 +1,13 @@
 ---
 - name: Example playbook for POC
   hosts: all 
-  tasks: 
+  tasks:
+
+    - name: Ensure EPEL release is installed
+      ansible.builtin.yum:
+        name: epel-release
+        state: present
+        
     - include_role:
         name: community.zabbix.zabbix_agent
       vars:
@@ -19,6 +25,6 @@
     - name: Ping my hosts
       ansible.builtin.ping:
     - name: Install latest bind-utils
-      ansible.builtin.yum:
+      ansible.builtin.package:
         name: bind-utils
         state: latest

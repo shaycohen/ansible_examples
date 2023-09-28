@@ -1,17 +1,10 @@
 ---
 - name: Example playbook for POC
   hosts: all 
+  become: true
   tasks:
-
-   - name: Manually install EPEL repo
-     ansible.builtin.command: 
-       cmd: rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-     args:
-       warn: no
-     become: yes
-
-        
-    - include_role:
+    - name: Include Zabbix Agent role
+      include_role:
         name: community.zabbix.zabbix_agent
       vars:
         zabbix_agent_server: "{{ zbx_agent_server }}"
@@ -24,9 +17,10 @@
           - name: mysql
             scripts_dir: mysql
           - name: galera
-          
+
     - name: Ping my hosts
       ansible.builtin.ping:
+
     - name: Install latest bind-utils
       ansible.builtin.package:
         name: bind-utils

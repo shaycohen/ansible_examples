@@ -3,6 +3,14 @@
   hosts: all 
   tasks: 
 
+    - name: Ensure EPEL repo is installed
+      ansible.builtin.yum_repository:
+        name: epel
+        description: EPEL YUM repo
+        baseurl: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch
+        enabled: yes
+        gpgcheck: yes
+
     - include_role:
         name: community.zabbix.zabbix_agent
       vars:

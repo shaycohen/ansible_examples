@@ -19,6 +19,6 @@
     - name: Ping my hosts
       ansible.builtin.ping:
     - name: Install latest bind-utils
-      ansible.builtin.package:
+      ansible.builtin.yum:
         name: bind-utils
         state: latest

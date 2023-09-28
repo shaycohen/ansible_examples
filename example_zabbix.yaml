@@ -1,19 +1,10 @@
 ---
 - name: Example playbook for POC
-  hosts: all
- 
-
+  hosts: all 
   tasks: 
-    - name: Validate zabbix_agent_supported_os
-      assert:
-        that: zabbix_agent_supported_os | bool
-        fail_msg: "Zabbix agent is not supported on this OS"
-      ignore_errors: true
 
-    - name: Include zabbix_agent role
-      include_role:
+    - include_role:
         name: zabbix.zabbix.zabbix_agent
-      when: zabbix_agent_supported_os | default(false) | bool
       vars:
         zabbix_agent_server: "{{ zbx_agent_server }}"
         zabbix_agent_serveractive: "{{ zbx_agent_serveractive }}"
@@ -28,10 +19,7 @@
           
     - name: Ping my hosts
       ansible.builtin.ping:
-
     - name: Install latest bind-utils
       ansible.builtin.package:
         name: bind-utils
         state: latest
-
-

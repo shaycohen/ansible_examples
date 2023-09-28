@@ -4,8 +4,8 @@
  
 
   tasks: 
-
-    - include_role:
+    - name: Include zabbix_agent role
+      import_role:
         name: zabbix.zabbix_agent
       vars:
         zabbix_agent_server: "{{ zbx_agent_server }}"

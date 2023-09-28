@@ -3,10 +3,13 @@
   hosts: all 
   tasks:
 
-    - name: Ensure EPEL release is installed
-      ansible.builtin.yum:
-        name: epel-release
-        state: present
+   - name: Manually install EPEL repo
+     ansible.builtin.command: 
+       cmd: rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+     args:
+       warn: no
+     become: yes
+
         
     - include_role:
         name: community.zabbix.zabbix_agent

@@ -1,5 +1,7 @@
 ---
   - hosts: all
+    vars:
+      zabbix_agent_supported_os: true
     roles:
       - role: zabbix.zabbix.zabbix_agent
         param_serveractive: 127.0.0.1   # address of Zabbix server to connect using active checks;

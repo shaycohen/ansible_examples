@@ -1,6 +1,6 @@
 ---
 collections:
-  - name: community.zabbix
+  - name: zabbix.zabbix
   - name: ansible.posix
   - name: ansible.utils
   - name: community.general

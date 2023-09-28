@@ -11,8 +11,9 @@
       ignore_errors: true
 
     - name: Include zabbix_agent role
-      import_role:
+      include_role:
         name: zabbix.zabbix.zabbix_agent
+      when: zabbix_agent_supported_os | default(false) | bool
       vars:
         zabbix_agent_server: "{{ zbx_agent_server }}"
         zabbix_agent_serveractive: "{{ zbx_agent_serveractive }}"

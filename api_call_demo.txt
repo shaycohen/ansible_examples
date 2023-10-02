@@ -1,1 +1,14 @@
-######
+#Check the current_version of api: 
+curl -X GET -k https://Your-server/api/ | jq .       
+
+#Get the list of all endpoints available:
+curl -X GET -k https://Your-server/api/v2/ | jq .   
+
+#List all job_templates: (Get the correct ID for your specific template)
+curl -X GET --user admin:adminpass -k https://Your-server/api/v2/job_templates/ | jq .  
+
+#Create/edit variable in /template section with the targeted value:
+curl -X PATCH -H 'Content-Type: application/json' --user admin:adminpass -d '{"extra_vars": "{\"YourVariable\": \"YourValue\"}"}' -k https://Your-server0/api/v2/job_templates/31/ | jq .     
+
+#Launch the right template with the correct vars you edited:
+curl -X POST --user admin:adminpass -k https://Your-server/api/v2/job_templates/31/launch/ | jq .
